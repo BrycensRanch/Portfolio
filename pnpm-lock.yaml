@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@astrojs/image': ^0.12.1
+  '@astrojs/image': ^0.16.0
   '@astrojs/mdx': ^0.18.0
   '@astrojs/rss': ^1.0.1
   '@astrojs/sitemap': ^1.0.0
@@ -21,7 +21,7 @@ specifiers:
   tailwindcss: ^3.2.4
 
 dependencies:
-  '@astrojs/image': 0.12.1_sharp@0.31.3
+  '@astrojs/image': 0.16.0_astro@1.2.3+sharp@0.31.3
   '@astrojs/mdx': 0.18.0_astro@1.2.3+rollup@2.77.3
   '@astrojs/rss': 1.0.1
   '@astrojs/sitemap': 1.0.0
@@ -64,23 +64,23 @@ packages:
     resolution: {integrity: sha512-xZ81C/oMfExdF18I1Tyd2BKKzBqO+qYYctSy4iCwH4UWSo/4Y8A8MAzV1hG67uuE7hFRourSl6H5KUbhyChv/A==}
     dev: false
 
-  /@astrojs/image/0.12.1_sharp@0.31.3:
-    resolution: {integrity: sha512-7pBUPCw7/FPwfEntx+mGjhdwpaWXNHwRVcTK71rpf+c2yb8iIesRS9r26U7lGozTzXUROh1y1ftA82ziuqYF6Q==}
+  /@astrojs/image/0.16.0_astro@1.2.3+sharp@0.31.3:
+    resolution: {integrity: sha512-9nZSA6/3ucdj5/M774CX0qtPtNZVGJeH6uTL4/4rYJgOZTFfr5CEGNmY9MIyayIYvatvG3VXyRGInLKEo4bXsg==}
     peerDependencies:
+      astro: ^2.1.0
       sharp: '>=0.31.0'
     peerDependenciesMeta:
       sharp:
         optional: true
     dependencies:
       '@altano/tiny-async-pool': 1.0.2
+      astro: 1.2.3
       http-cache-semantics: 4.1.0
       image-size: 1.0.2
       kleur: 4.1.5
-      magic-string: 0.25.9
+      magic-string: 0.27.0
       mime: 3.0.0
       sharp: 0.31.3
-      slash: 4.0.0
-      web-streams-polyfill: 3.2.1
     dev: false
 
   /@astrojs/language-server/0.23.3:
@@ -2418,6 +2418,13 @@ packages:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
       sourcemap-codec: 1.4.8
+    dev: false
+
+  /magic-string/0.27.0:
+    resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
     dev: false
 
   /markdown-extensions/1.1.1:
