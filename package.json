@@ -27,7 +27,7 @@
     "@astrojs/rss": "^1.0.1",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^1.0.1",
-    "astro": "^1.2.3",
+    "astro": "^2.0.0",
     "astro-analytics": "^2.6.0",
     "astro-compressor": "^0.2.2",
     "astro-critters": "^1.1.26",
