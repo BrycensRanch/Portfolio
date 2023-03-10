@@ -5,7 +5,7 @@ specifiers:
   '@astrojs/mdx': ^0.18.0
   '@astrojs/rss': ^1.0.1
   '@astrojs/sitemap': ^1.0.0
-  '@astrojs/tailwind': ^1.0.1
+  '@astrojs/tailwind': ^3.0.0
   '@tailwindcss/typography': ^0.5.7
   astro: ^1.2.3
   astro-analytics: ^2.6.0
@@ -25,7 +25,7 @@ dependencies:
   '@astrojs/mdx': 0.18.0_astro@1.2.3+rollup@2.77.3
   '@astrojs/rss': 1.0.1
   '@astrojs/sitemap': 1.0.0
-  '@astrojs/tailwind': 1.0.1
+  '@astrojs/tailwind': 3.1.0_6lzhxsanaihvkyelhco7ew7qbu
   astro: 1.2.3
   astro-analytics: 2.6.0
   astro-compressor: 0.2.2
@@ -221,12 +221,17 @@ packages:
       zod: 3.19.1
     dev: false
 
-  /@astrojs/tailwind/1.0.1:
-    resolution: {integrity: sha512-ZVytcmam/krEkg3xfW+2ItMz/XKWCg86Zj9lZsUOybEi3mcQZt++CRGyX1zqUAHrjXY9p/hhMeSWtwVX3GnIyA==}
+  /@astrojs/tailwind/3.1.0_6lzhxsanaihvkyelhco7ew7qbu:
+    resolution: {integrity: sha512-eNflzlCdCtLZjc8pK0xQb/hXYnN/mVGVJFRAMWStrFwg8Tsvj6WVCPyRy77D5NL2tQ1piS2wiouOzAgiy1Dsiw==}
+    peerDependencies:
+      astro: ^2.1.0
+      tailwindcss: ^3.0.24
     dependencies:
       '@proload/core': 0.3.3
+      astro: 1.2.3
       autoprefixer: 10.4.10_postcss@8.4.16
       postcss: 8.4.16
+      postcss-load-config: 4.0.1_postcss@8.4.16
       tailwindcss: 3.2.4_postcss@8.4.16
     transitivePeerDependencies:
       - ts-node
@@ -3311,6 +3316,23 @@ packages:
       postcss: 8.4.16
       yaml: 1.10.2
 
+  /postcss-load-config/4.0.1_postcss@8.4.16:
+    resolution: {integrity: sha512-vEJIc8RdiBRu3oRAI0ymerOn+7rPuMvRXslTvZUKZonDHFIczxztIyJ1urxM1x9JXEikvpWWTUUqal5j/8QgvA==}
+    engines: {node: '>= 14'}
+    peerDependencies:
+      postcss: '>=8.0.9'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+      ts-node:
+        optional: true
+    dependencies:
+      lilconfig: 2.0.6
+      postcss: 8.4.16
+      yaml: 2.2.1
+    dev: false
+
   /postcss-nested/6.0.0_postcss@8.4.16:
     resolution: {integrity: sha512-0DkamqrPcmkBDsLn+vQDIrtkSbNkv5AD/M322ySo9kqFkCIYklym2xEmWkwo+Y3/qZo34tzEPNUw4y7yMCdv5w==}
     engines: {node: '>=12.0'}
@@ -4360,6 +4382,11 @@ packages:
   /yaml/1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
+
+  /yaml/2.2.1:
+    resolution: {integrity: sha512-e0WHiYql7+9wr4cWMx3TVQrNwejKaEe7/rHNmQmqRjazfOP5W8PB6Jpebb5o6fIapbz9o9+2ipcaTM2ZwDI6lw==}
+    engines: {node: '>= 14'}
+    dev: false
 
   /yargs-parser/21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
