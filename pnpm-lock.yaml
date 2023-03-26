@@ -9,7 +9,7 @@ specifiers:
   '@tailwindcss/typography': ^0.5.7
   astro: ^1.2.3
   astro-analytics: ^2.6.0
-  astro-compressor: ^0.2.2
+  astro-compressor: ^0.4.0
   astro-critters: ^1.1.26
   astro-og-canvas: ^0.1.6
   astro-purgecss: ^2.0.0
@@ -28,7 +28,7 @@ dependencies:
   '@astrojs/tailwind': 3.1.0_6lzhxsanaihvkyelhco7ew7qbu
   astro: 1.2.3
   astro-analytics: 2.6.0
-  astro-compressor: 0.2.2
+  astro-compressor: 0.4.0
   astro-critters: 1.1.26
   astro-og-canvas: 0.1.6_astro@1.2.3
   astro-purgecss: 2.0.1_astro@1.2.3
@@ -904,8 +904,8 @@ packages:
     resolution: {integrity: sha512-H7pnYcHLMLATH2ilKEFqZVQqw4NlEQs72I9VYDrSIGNyjm+Abmqq7RwgxpfCpG5sszo6lGNaKhPlHmftG2M42A==}
     dev: false
 
-  /astro-compressor/0.2.2:
-    resolution: {integrity: sha512-oltIyQQwefvBtR9uRqFUYJSrdKuk3QcgT/sTegau7kxdsxkt0g0l39Amb7E5Qz1jXkg+zILBvuR6GAv7ttdYCw==}
+  /astro-compressor/0.4.0:
+    resolution: {integrity: sha512-yw6wM+cjkdyAMc6HW2lrdinOxt64PwQuL5NCAe71cXF/5xjnyJhgg9nyyFE32oQtmtd5I/57Pyp/kPe9IfYAxg==}
     dev: false
 
   /astro-critters/1.1.26:

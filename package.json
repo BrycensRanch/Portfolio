@@ -29,7 +29,7 @@
     "@astrojs/tailwind": "^3.0.0",
     "astro": "^1.2.3",
     "astro-analytics": "^2.6.0",
-    "astro-compressor": "^0.2.2",
+    "astro-compressor": "^0.4.0",
     "astro-critters": "^1.1.26",
     "astro-og-canvas": "^0.1.6",
     "astro-purgecss": "^2.0.0",
