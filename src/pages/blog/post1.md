@@ -1,9 +1,9 @@
 ---
-layout: "../../layouts/PostLayout.astro"
-title: "Demo Post 1"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 10 2022"
-heroImage: "/open-graph/blog/post1.png"
+layout: '../../layouts/PostLayout.astro'
+title: 'Demo Post 1'
+description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+pubDate: 'Sep 10 2022'
+heroImage: '/open-graph/blog/post1.png'
 hidden: true
 ---
 

@@ -2,7 +2,6 @@
 
 ![Astro Modern Personal Website](public/social_img.png)
 
-
 ## 👷‍♂️🏗️ Currently under construction! 🚧👷
 
 Things that need work: GitHub Actions deployment & dependency management
@@ -11,13 +10,13 @@ Things that need work: GitHub Actions deployment & dependency management
 
 Run the following command in your terminal
 
-``` bash
+```bash
 pnpm install
 ```
 
 Once the packages are installed you are ready to run Astro. Astro comes with a built-in development server that has everything you need for project development. The astro dev command will start the local development server.
 
-``` bash
+```bash
 pnpm dev
 ```
 
@@ -29,7 +28,7 @@ pnpm dev
 
 ## Project Structure
 
-``` php
+```php
 ├── src/
 │   ├── components/
 │   │   ├── cs/
@@ -72,8 +71,7 @@ You can deploy the site on your favorite static hosting service such as Vercel, 
 
 The configuration for the deployment varies depending on the platform where you are going to do it. See the [official Astro information](https://docs.astro.build/en/guides/deploy/) to deploy the website.
 
-> **⚠️ CAUTION** </br>
-> The Blog pagination of this template is implemented using dynamic route parameters in its filename and for now this format is incompatible with SSR deploy configs, so please use the default static deploy options for your deployments.
+> **⚠️ CAUTION** </br> The Blog pagination of this template is implemented using dynamic route parameters in its filename and for now this format is incompatible with SSR deploy configs, so please use the default static deploy options for your deployments.
 
 ## Contributing
 
@@ -81,7 +79,7 @@ Suggestions and pull requests are welcomed! Feel free to open a discussion or an
 
 One of the best ways of contributing is to grab a [bug report or feature suggestion](https://github.com/BrycensRanch/Portfolio/issues) that has been marked `accepted` and dig in.
 
-Please be wary of working on issues *not* marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
+Please be wary of working on issues _not_ marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
 
 ## License
 

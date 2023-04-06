@@ -1,4 +1,23 @@
 {
-  "recommendations": ["astro-build.astro-vscode", "xyc.vscode-mdx-preview", "unifiedjs.vscode-mdx"],
-  "unwantedRecommendations": []
+	"recommendations": [
+		"astro-build.astro-vscode",
+		"xyc.vscode-mdx-preview",
+		"unifiedjs.vscode-mdx",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"rvest.vs-code-prettier-eslint",
+		"csstools.postcss",
+		"bradlc.vscode-tailwindcss",
+		"orta.vscode-jest",
+		"ms-edgedevtools.vscode-edge-devtools",
+		"davidanson.vscode-markdownlint",
+		"deepscan.vscode-deepscan",
+		"knisterpeter.vscode-commitizen",
+		"prantlf.fold-on-open",
+		"vivaxy.vscode-conventional-commits",
+		"christian-kohler.path-intellisense",
+		"christian-kohler.npm-intellisense",
+		"ms-azuretools.vscode-docker"
+	],
+	"unwantedRecommendations": []
 }
