@@ -1,0 +1,62 @@
+{
+	"root": true,
+	"env": {
+		"node": true
+	},
+	"$schema": "https://json.schemastore.org/eslintrc",
+	// Configuration for JavaScript files
+	"extends": ["plugin:unicorn/recommended", "plugin:sonarjs/recommended", "plugin:astro/recommended"],
+	"plugins": ["node", "sonarjs", "astro", "tailwindcss"],
+	"rules": {
+		"unicorn/prefer-module": "off",
+		"unicorn/prefer-top-level-await": "off",
+		"unicorn/filename-case": "off",
+		"unicorn/no-await-expression-member": "off"
+	},
+	"overrides": [
+		// Configuration for TypeScript files
+		{
+			"files": ["**/*.ts", "**/*.tsx"],
+			"plugins": ["@typescript-eslint", "react-hooks"],
+			"extends": ["plugin:tailwindcss/recommended"],
+			"parserOptions": {
+				"project": "./tsconfig.json"
+			},
+			"rules": {
+				"no-console": "off",
+				"@typescript-eslint/indent": "off", // Avoid conflict rule between Eslint and Prettier
+				"@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
+				"@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
+				"@typescript-eslint/no-unused-vars": "off"
+			}
+		},
+		{
+			"files": ["*.astro"],
+			"parser": "astro-eslint-parser",
+			"parserOptions": {
+				"parser": "@typescript-eslint/parser",
+				"extraFileExtensions": [".astro"]
+			}
+		},
+		// Configuration for testing
+		{
+			"files": ["**/*.test.ts", "**/*.test.tsx"],
+			"plugins": ["jest", "jest-formatting", "testing-library", "jest-dom"],
+			"extends": [
+				"plugin:jest/recommended",
+				"plugin:jest-formatting/recommended",
+				"plugin:testing-library/react",
+				"plugin:jest-dom/recommended"
+			]
+		},
+		// Configuration for e2e testing (Cypress)
+		{
+			"files": ["cypress/**/*.ts"],
+			"plugins": ["cypress"],
+			"extends": ["plugin:cypress/recommended"],
+			"parserOptions": {
+				"project": "./cypress/tsconfig.json"
+			}
+		}
+	]
+}

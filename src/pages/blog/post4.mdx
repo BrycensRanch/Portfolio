@@ -1,0 +1,52 @@
+---
+layout: '../../layouts/PostLayout.astro'
+title: 'Demo Post 4'
+description: 'My amazing blog post that is innovative, informative, and above all is worth reading.'
+pubDate: 'Sep 12 2022'
+updatedDate: 'Sep 13 2023'
+heroImage: '/open-graph/blog/post4.png'
+hidden: false
+slug: 'test4'
+---
+
+import Counter from '../../components/Counter.jsx';
+import Title from '../../components/Title.astro';
+export const components = { h1: Title };
+
+export const authors = [
+	{ name: 'Jane', email: 'hi@jane.com' },
+	{ name: 'John', twitter: '@john2002' },
+];
+export const published = new Date('2022-02-01');
+
+# Hi
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis aliquam faucibus purus in massa tempor nec feugiat. Maecenas volutpat blandit aliquam etiam erat velit. Tortor condimentum lacinia quis vel eros. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Urna porttitor rhoncus dolor purus non. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Dolor sit amet consectetur adipiscing elit duis tristique. Sit amet consectetur adipiscing elit pellentesque habitant. Proin sed libero enim sed. Pulvinar pellentesque habitant morbi tristique senectus et netus et.
+
+Urna cursus eget nunc scelerisque viverra mauris. Vulputate eu scelerisque felis imperdiet proin fermentum. Id venenatis a condimentum vitae sapien pellentesque habitant morbi tristique. Diam vel quam elementum pulvinar etiam non quam. Eleifend quam adipiscing vitae proin sagittis nisl. Vitae purus faucibus ornare suspendisse sed. Semper risus in hendrerit gravida rutrum. Id consectetur purus ut faucibus. Eleifend mi in nulla posuere sollicitudin aliquam. Pretium vulputate sapien nec sagittis aliquam malesuada. Nullam non nisi est sit amet facilisis magna etiam. Quam pellentesque nec nam aliquam. Amet luctus venenatis lectus magna fringilla urna. Auctor neque vitae tempus quam pellentesque. Nam libero justo laoreet sit. Eros in cursus turpis massa tincidunt dui ut ornare lectus. Scelerisque viverra mauris in aliquam sem fringilla ut. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis.
+
+Tristique senectus et netus et malesuada fames ac turpis. Ut tristique et egestas quis ipsum suspendisse. Ut tortor pretium viverra suspendisse potenti nullam ac. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. Leo integer malesuada nunc vel risus commodo. Id ornare arcu odio ut sem nulla pharetra diam sit. Congue nisi vitae suscipit tellus mauris a diam maecenas. Nulla facilisi nullam vehicula ipsum a arcu. Eu ultrices vitae auctor eu augue ut lectus arcu bibendum. Facilisi etiam dignissim diam quis enim. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Enim tortor at auctor urna. Sed turpis tincidunt id aliquet risus feugiat in ante metus. Arcu cursus euismod quis viverra nibh cras. Egestas pretium aenean pharetra magna. Eget nunc lobortis mattis aliquam faucibus purus in massa.
+
+Arcu cursus vitae congue mauris rhoncus aenean. Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Gravida dictum fusce ut placerat. Id porta nibh venenatis cras. Nibh cras pulvinar mattis nunc sed blandit libero volutpat sed. Leo in vitae turpis massa sed. Hendrerit dolor magna eget est lorem ipsum dolor sit. Eget dolor morbi non arcu risus. Lectus urna duis convallis convallis tellus id interdum. Eget arcu dictum varius duis at. Eu augue ut lectus arcu bibendum at varius vel pharetra.
+
+Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Massa enim nec dui nunc mattis. In nisl nisi scelerisque eu ultrices vitae. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra. Nisl pretium fusce id velit ut tortor pretium. Magnis dis parturient montes nascetur ridiculus mus. Leo duis ut diam quam nulla. Pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices. Senectus et netus et malesuada. Sit amet massa vitae tortor condimentum lacinia.
+
+# Hello world
+
+Written by: {new Intl.ListFormat('en').format(authors.map(d => d.name))}.
+
+Published on: {new Intl.DateTimeFormat('en', {dateStyle: 'long'}).format(published)}.
+
+<Counter client:idle>This is a **counter**!</Counter>
+
+## Syntax highlighting
+
+We also support syntax highlighting in MDX out-of-the-box! This example uses our default [Shiki theme](https://github.com/shikijs/shiki). See the [MDX integration docs](https://docs.astro.build/en/guides/integrations-guide/mdx/#syntax-highlighting) for configuration options.
+
+```astro
+---
+const weSupportAstro = true;
+---
+
+<h1>Hey, what theme is that? Looks nice!</h1>
+```

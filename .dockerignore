@@ -1,0 +1,9 @@
+dist
+node_modules
+coverage
+cypress
+.vscode
+.husky
+.github
+.git
+.devcontainer

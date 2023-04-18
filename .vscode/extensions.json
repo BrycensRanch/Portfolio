@@ -8,7 +8,6 @@
 		"rvest.vs-code-prettier-eslint",
 		"csstools.postcss",
 		"bradlc.vscode-tailwindcss",
-		"orta.vscode-jest",
 		"ms-edgedevtools.vscode-edge-devtools",
 		"davidanson.vscode-markdownlint",
 		"deepscan.vscode-deepscan",
@@ -17,7 +16,9 @@
 		"vivaxy.vscode-conventional-commits",
 		"christian-kohler.path-intellisense",
 		"christian-kohler.npm-intellisense",
-		"ms-azuretools.vscode-docker"
+		"ms-azuretools.vscode-docker",
+		"vadistic.mdx-inline",
+		"awxxxxxx.vscode-mdx-checker"
 	],
 	"unwantedRecommendations": []
 }

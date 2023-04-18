@@ -11,13 +11,16 @@ export async function getStaticPaths({ paginate }) {
   return paginate(posts, { pageSize: 10 });
 }
 const { page } = Astro.props;
-const blogPosts = page.data.filter(p => p?.frontmatter?.hidden !== true)
+const recentBlogPosts = page.data.filter(p => p?.frontmatter?.hidden !== true)
 ---
 
 <BaseLayout title = "Blog">
   <ul>
+    {
+      console.log(recentBlogPosts.map(p => p.Content()))
+    }
     <!--List the array of astronaut info-->
-    {blogPosts.map(( post ) => (
+    {recentBlogPosts.map(( post ) => (
      <HorizontalCard
         title={post.frontmatter.title}
         img={post.frontmatter.heroImage}
@@ -30,10 +33,12 @@ const blogPosts = page.data.filter(p => p?.frontmatter?.hidden !== true)
     ))}
   </ul>
   {
-    blogPosts && blogPosts.length === 0 ? <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+    recentBlogPosts && recentBlogPosts.length === 0 ? (
+      <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
 <p class="font-bold">Nothing to see here</p>
-<p>There's currently no blog posts to view at the moment...</p>
-</div> : undefined
+<p>There's currently no recent blog posts to view at the moment...</p>
+</div>
+) : undefined
   }
 
     <div class="flex justify-between">

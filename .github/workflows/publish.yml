@@ -1,0 +1,129 @@
+name: Publish
+
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.pull_request.head.label || github.ref }}
+
+on:
+  push:
+    branches:
+      - '*'
+
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  build-lint-test-docker:
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Check out current repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: 📥 Monorepo install all deps & pnpm
+        uses: ./.github/actions/pnpm-install
+
+      - name: Restore build from cache
+        if: ${{ !github.event.act }}
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/dist
+            ~/.cache
+            ${{ github.workspace }}/.cache
+            ${{ github.workspace }}/**/tsconfig.tsbuildinfo
+          key: ${{ runner.os }}-astro-${{ hashFiles('**/pnpm.lock') }}-${{ hashFiles('src/**.[jt]s?', 'src/**.json') }}
+          restore-keys: |
+            ${{ runner.os }}-astro-${{ hashFiles('**/pnpm.lock') }}-
+      - name: 👁️ Ensure Code is Linted
+        run: |
+          pnpm lint:check
+      - name: 🚧 Ensure Code is Formatted
+        run: |
+          pnpm format:check
+      - name: 🤖 Build Project
+        run: |
+          pnpm build
+        # - name: 🐳 Build Docker Image
+        #   run: |
+        #     docker compose up --build
+        env:
+          NODE_ENV: production
+      - name: 🥳 Run Tests (project-wide)
+        run: |
+          pnpm test
+      - name: 📤 Upload Coverage to Codecov
+        uses: codecov/codecov-action@v3
+        if: ${{ !github.event.act }}
+      - uses: actions/upload-artifact@v3
+        if: ${{ !github.event.act }}
+        with:
+          name: cypress-screenshots
+          path: ./cypress/screenshots
+      - uses: actions/upload-artifact@v3
+        if: ${{ !github.event.act }}
+        with:
+          name: cypress-videos
+          path: ./cypress/videos
+      - uses: actions/upload-artifact@v3
+        if: ${{ !github.event.act }}
+        with:
+          name: build
+          path: |
+            ./dist
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [build-lint-test-docker]
+    if: ${{ !github.event.act }} && github.event_name != 'pull_request'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      - name: 📥 Monorepo install all deps & pnpm
+        uses: ./.github/actions/pnpm-install
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          git_tag_gpgsign: false
+          git_push_gpgsign: false
+      - name: 🌋 Publish to the great interwebs.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GIT_AUTHOR_NAME: ${{ steps.import_gpg.outputs.name }}
+          GIT_AUTHOR_EMAIL: ${{ steps.import_gpg.outputs.email }}
+          GIT_COMMITTER_NAME: ${{ steps.import_gpg.outputs.name }}
+          GIT_COMMITTER_EMAIL: ${{ steps.import_gpg.outputs.email }}
+          signingKeyId: ${{ steps.import_gpg.outputs.keyid }}
+          signingKey: ${{ secrets.GPG_PRIVATE_KEY }}
+          signingPassword: ${{ secrets.PASSPHRASE }}
+          GH_URL: 'https://api.github.com/'
+        run: |
+          pnpm semantic-release
