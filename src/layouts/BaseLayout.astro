@@ -7,13 +7,36 @@ import { Spa } from "astro-spa";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
-const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+const { image = '/social_img.png', title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+
+// import * as Sentry from "@sentry/node"
+
+// Sentry.init({
+//   dsn: "__DSN__",
+//   tracesSampleRate: 1
+// })
+
+// try {
+//   throw new Error("Internal server error")
+// }
+// catch(error) {
+//   Sentry.captureException(error)
+// }
 ---
 
 <!DOCTYPE html>
 <html lang="en" data-theme="emerald">
   <head>
     <BaseHead title={title} description={description} image={image} />
+    <!-- <script type="text/partytown">
+    import * as Sentry from "@sentry/browser"
+
+    Sentry.init({
+      dsn: "___DSN__",
+      integrations: [new Sentry.BrowserTracing()],
+      tracesSampleRate: 1
+    })
+    </script> -->
   </head>
   <body>
     <Spa />
@@ -27,6 +50,7 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.prop
           </main>
         </div>
         <Footer />
+        <button onclick="throw new Error('Test Error')">Throw Error</button>
       </div>
       <SideBar />
     </div>

@@ -2,18 +2,18 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 
-const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+const publicBlogPosts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 ).filter(p => p?.frontmatter?.hidden !== true);
 
-const last_posts = posts.slice(0, 3);
+const recentBlogPosts = publicBlogPosts.slice(0, 3);
 ---
 
 <BaseLayout>
 
     <div class="pb-12 mt-5">
       <div class="text-xl py-1">Hey there 👋</div>
-      <div class="text-5xl font-bold">I'm Brycen G</div>
+      <h1 data-testid="index-h1" class="text-5xl font-bold">I'm Brycen G</h1>
       <div class="text-3xl py-3 font-bold">Aspiring Software Developer</div>
       <div class="py-2">
         <text class="text-lg">
@@ -38,6 +38,14 @@ const last_posts = posts.slice(0, 3);
       url="https://github.com/BrycensRanch/import-stars"
       badge="CLI"
     />
+    <HorizontalCard
+    title="E2E Encrypted Web Application"
+    img="/GitHub Background.png"
+    desc="CLI application that can pull HUNDREDS of starred repos from a GitHub user and star them on another account"
+    url="https://github.com/BrycensRanch/import-stars"
+    badge="ARCHIVED"
+    badgeClasses="badge badge-warning mx-2"
+  />
     <!-- <div class="divider my-0"></div>
     <HorizontalCard
     title="Demo Project 2"
@@ -60,7 +68,7 @@ const last_posts = posts.slice(0, 3);
     </div>
 
     {
-      last_posts.map((post) => (
+      recentBlogPosts.map((post) => (
         <HorizontalCard
           title={post.frontmatter.title}
           img={post.frontmatter.heroImage}
@@ -72,7 +80,7 @@ const last_posts = posts.slice(0, 3);
       ))
     }
     {
-      last_posts && last_posts.length === 0 ? <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+      recentBlogPosts && recentBlogPosts.length === 0 ? <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
   <p class="font-bold">Nothing to see here</p>
   <p>There's currently no blog posts to view at the moment...</p>
 </div> : ""

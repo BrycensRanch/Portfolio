@@ -3,7 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import getReadingTime from "../lib/readingTime";
 import BaseLayout from "./BaseLayout.astro";
 
-export interface Props {
+export interface Properties {
   content: {
     title: string;
     description: string;
@@ -14,7 +14,7 @@ export interface Props {
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage }
+  content: { title, description, pubDate, updatedDate, heroImage = '/post_img.webp' }
 } = Astro.props;
 ---
 
@@ -23,7 +23,7 @@ const {
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
       {heroImage && <img src={heroImage} alt={title} class="w-full mb-6" />}
       <h1 class="title my-2 text-4xl font-bold">{title}</h1>
-      {pubDate && <time>{pubDate}</time>}
+      Published on {pubDate && <time>{pubDate}</time>}
       {
         updatedDate && (
           <div>
@@ -32,8 +32,28 @@ const {
           </div>
         )
       }
+      <br />
+      <span>Reading time is {0}</span>
       <div class="divider my-2"></div>
         <slot />
+        <div class="divider my-2"></div>
+        <script src="https://giscus.app/client.js"
+        data-repo="BrycensRanch/Portfolio"
+        data-repo-id="R_kgDOI0po-A"
+        data-category="General"
+        data-category-id="DIC_kwDOI0po-M4CVx6n"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+        
     </article>
   </main>
 </BaseLayout>
