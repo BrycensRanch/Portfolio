@@ -17,7 +17,8 @@ RUN apk add --no-cache bash
 # see https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine
 RUN apk add --no-cache libc6-compat
 
-SHELL ["bash", "-c"]
+# We need bash for pnpm on Alpine
+SHELL ["/bin/bash", "-c"]
 WORKDIR /home/nodejs/app
 
 
