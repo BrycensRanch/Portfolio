@@ -62,8 +62,7 @@ jobs:
           pnpm build
       - name: 🐳 Build Docker Image
         run: |
-          docker build -t portfolio . 
-          docker run -d -p 3000:80 portfolio
+          docker build -t portfolio .
       - name: 🥳 Run Tests (project-wide)
         run: |
           pnpm test
