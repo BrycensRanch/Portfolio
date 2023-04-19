@@ -60,11 +60,10 @@ jobs:
       - name: 🤖 Build Project
         run: |
           pnpm build
-        # - name: 🐳 Build Docker Image
-        #   run: |
-        #     docker compose up --build
-        env:
-          NODE_ENV: production
+      - name: 🐳 Build Docker Image
+        run: |
+          docker build -t portfolio . 
+          docker run -d -p 3000:80 portfolio
       - name: 🥳 Run Tests (project-wide)
         run: |
           pnpm test
