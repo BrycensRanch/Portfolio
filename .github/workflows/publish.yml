@@ -87,7 +87,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     needs: [build-lint-test-docker]
-    if: ${{ !github.event.act && github.event_name != 'pull_request' && github.action_repository	=== 'BrycensRanch/Portfolio' }}
+    if: ${{ !github.event.act && github.event_name != 'pull_request' && github.action_repository == 'BrycensRanch/Portfolio' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
