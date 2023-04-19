@@ -68,9 +68,6 @@ jobs:
       - name: 🥳 Run Tests (project-wide)
         run: |
           pnpm test
-      - name: 📤 Upload Coverage to Codecov
-        uses: codecov/codecov-action@v3
-        if: ${{ !github.event.act }}
       - uses: actions/upload-artifact@v3
         if: ${{ !github.event.act }}
         with:
