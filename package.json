@@ -15,6 +15,7 @@
 	"homepage": "https://github.com/BrycensRanch/Portfolio#README",
 	"private": true,
 	"scripts": {
+		"prepare": "husky install",
 		"dev": "astro dev --host",
 		"start": "node ./dist/server/entry.mjs",
 		"build": "astro build",
@@ -33,15 +34,6 @@
 		"lint:check": "eslint .",
 		"format": "prettier --write .",
 		"format:check": "prettier --check ."
-	},
-	"nyc": {
-		"extends": "./nyc.config.cjs",
-		"report-dir": "cypress-coverage",
-		"reporter": [
-			"json",
-			"lcov",
-			"text-summary"
-		]
 	},
 	"dependencies": {
 		"@astrojs/image": "^0.16.6",
@@ -75,8 +67,6 @@
 		"@commitlint/cli": "^17.6.1",
 		"@commitlint/config-conventional": "^17.6.1",
 		"@commitlint/cz-commitlint": "^17.5.0",
-		"@cypress/browserify-preprocessor": "^3.0.2",
-		"@cypress/code-coverage": "^3.10.4",
 		"@percy/cli": "^1.23.0",
 		"@percy/cypress": "^3.1.2",
 		"@semantic-release/changelog": "^6.0.3",
@@ -113,7 +103,6 @@
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.1",
 		"npm-run-all": "^4.1.5",
-		"nyc": "^15.1.0",
 		"prettier": "^2.8.7",
 		"prettier-plugin-astro": "^0.8.0",
 		"prettier-plugin-prisma": "^4.12.0",
