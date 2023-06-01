@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@astrojs/image": "^0.16.0",
-    "@astrojs/mdx": "^0.18.0",
+    "@astrojs/mdx": "^0.19.5",
     "@astrojs/rss": "^2.0.0",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.0.0",
