@@ -4,7 +4,7 @@ specifiers:
   '@astrojs/image': ^0.16.0
   '@astrojs/mdx': ^0.18.0
   '@astrojs/rss': ^2.0.0
-  '@astrojs/sitemap': ^1.0.0
+  '@astrojs/sitemap': ^2.0.0
   '@astrojs/tailwind': ^3.0.0
   '@tailwindcss/typography': ^0.5.7
   astro: ^2.0.0
@@ -24,7 +24,7 @@ dependencies:
   '@astrojs/image': 0.16.0_astro@2.1.7+sharp@0.32.0
   '@astrojs/mdx': 0.18.0_astro@2.1.7+rollup@3.20.2
   '@astrojs/rss': 2.2.0
-  '@astrojs/sitemap': 1.0.0
+  '@astrojs/sitemap': 2.0.0
   '@astrojs/tailwind': 3.1.0_rbvtrzhduaiu256ymxewe7vkke
   astro: 2.1.7_sharp@0.32.0
   astro-analytics: 2.6.0
@@ -189,11 +189,11 @@ packages:
       kleur: 4.1.5
     dev: false
 
-  /@astrojs/sitemap/1.0.0:
-    resolution: {integrity: sha512-42GxuF5FP7RaKXZrwGLBLOX3hPv+Wl7ExJC43O0J5e34ojJkLeKf7QfwN1UwrJlqH0Ywi0Fm4/xGe482G09+wg==}
+  /@astrojs/sitemap/2.0.0:
+    resolution: {integrity: sha512-hcemuFigv05sdXNiw0U23VO+6Duj9nq9xhINw4ZPWAQEhS/F4EiNvd9IUXb4XJ7pG93MWAnQKF9lP8EtwP6paA==}
     dependencies:
       sitemap: 7.1.1
-      zod: 3.19.1
+      zod: 3.21.4
     dev: false
 
   /@astrojs/tailwind/3.1.0_rbvtrzhduaiu256ymxewe7vkke:
@@ -4550,10 +4550,6 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-    dev: false
-
-  /zod/3.19.1:
-    resolution: {integrity: sha512-LYjZsEDhCdYET9ikFu6dVPGp2YH9DegXjdJToSzD9rO6fy4qiRYFoyEYwps88OseJlPyl2NOe2iJuhEhL7IpEA==}
     dev: false
 
   /zod/3.21.4:
