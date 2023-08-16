@@ -30,7 +30,7 @@
     "astro": "^2.0.0",
     "astro-analytics": "^2.6.0",
     "astro-compressor": "^0.4.0",
-    "astro-critters": "^1.1.26",
+    "astro-critters": "^2.0.10",
     "astro-og-canvas": "^0.1.6",
     "astro-purgecss": "^2.0.0",
     "astro-robots-txt": "^0.4.0",
